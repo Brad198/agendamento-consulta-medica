@@ -4,6 +4,8 @@ import { Chip } from "@mui/material";
 import { PatientsSelector } from "@/components/patients/PatientsSelector";
 import { getPatients } from "@/services/getPatients";
 
+export const dynamic = "force-dynamic";
+
 export default async function AppointmentsPage() {
   const patients = await getPatients();
 
