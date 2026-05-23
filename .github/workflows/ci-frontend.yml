@@ -1,0 +1,39 @@
+name: Frontend CI
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'appointment-frontend/**'
+      - '.github/workflows/ci-frontend.yml'
+  pull_request:
+    branches: [main, master]
+    paths:
+      - 'appointment-frontend/**'
+      - '.github/workflows/ci-frontend.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: appointment-frontend
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+          cache-dependency-path: appointment-frontend/pnpm-lock.yaml
+
+      - name: Instalar dependências
+        run: pnpm install
+
+      - name: Linter
+        run: pnpm run lint
+
+      - name: Build
+        run: pnpm run build

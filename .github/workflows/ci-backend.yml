@@ -1,0 +1,33 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'appointment-api/**'
+      - '.github/workflows/ci-backend.yml'
+  pull_request:
+    branches: [main, master]
+    paths:
+      - 'appointment-api/**'
+      - '.github/workflows/ci-backend.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: appointment-api
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Instalar Java JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Compilar e Executar Testes
+        run: mvn clean verify
