@@ -1,12 +1,12 @@
+import { Check, ErrorOutlined, KeyboardBackspace } from "@mui/icons-material";
+import { Breadcrumbs } from "@mui/material";
+import Link from "next/link";
 import { AppointmentsForm } from "@/components/appointments/AppointmentForm";
 import { AppointmentsTable } from "@/components/appointments/AppointmentTable";
 import { getAppointmentsByPatience } from "@/services/getAppointmentsByPatient";
 import { getDoctors } from "@/services/getDoctors";
 import { getPatientById } from "@/services/getPatientById";
 import { HttpResponseError } from "@/utils/errors/ErrorHttpResponse";
-import { Check, ErrorOutlined, KeyboardBackspace } from "@mui/icons-material";
-import { Breadcrumbs } from "@mui/material";
-import Link from "next/link";
 
 type AppointmentsPageProps = {
   params: Promise<{

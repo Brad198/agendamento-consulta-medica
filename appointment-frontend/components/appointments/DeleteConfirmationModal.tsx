@@ -1,7 +1,3 @@
-import { cancelAppointmentByPatient } from "@/services/cancelAppointmentByPatient";
-import type { Appointment } from "@/types/entities/Appointment";
-import type { Patient } from "@/types/entities/Patient";
-import { HttpResponseError } from "@/utils/errors/ErrorHttpResponse";
 import {
   Button,
   Dialog,
@@ -13,6 +9,10 @@ import {
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { toast } from "sonner";
+import { cancelAppointmentByPatient } from "@/services/cancelAppointmentByPatient";
+import type { Appointment } from "@/types/entities/Appointment";
+import type { Patient } from "@/types/entities/Patient";
+import { HttpResponseError } from "@/utils/errors/ErrorHttpResponse";
 
 type DeleteConfirmationModalProps = {
   appointment: Appointment;

@@ -1,8 +1,5 @@
 "use client";
 
-import { getAppointmentsByPatience } from "@/services/getAppointmentsByPatient";
-import type { Appointment } from "@/types/entities/Appointment";
-import type { Patient } from "@/types/entities/Patient";
 import { ErrorOutlined, Person } from "@mui/icons-material";
 import {
   Avatar,
@@ -16,6 +13,9 @@ import {
   TableRow,
 } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
+import { getAppointmentsByPatience } from "@/services/getAppointmentsByPatient";
+import type { Appointment } from "@/types/entities/Appointment";
+import type { Patient } from "@/types/entities/Patient";
 import { DeleteConfirmationModal } from "./DeleteConfirmationModal";
 import { NotesModal } from "./NotesModal";
 

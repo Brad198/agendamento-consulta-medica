@@ -1,11 +1,11 @@
 "use client";
 
-import type { Patient } from "@/types/entities/Patient";
 import BadgeIcon from "@mui/icons-material/Badge";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import PhoneIcon from "@mui/icons-material/Phone";
 import { Avatar, Card, CardActionArea, CardContent, Chip } from "@mui/material";
 import { useRouter } from "next/navigation";
+import type { Patient } from "@/types/entities/Patient";
 
 type PatientsSelectorProps = {
   patients: Patient[];

@@ -1,8 +1,8 @@
-import { PatientsSelector } from "@/components/patients/PatientsSelector";
-import { getPatients } from "@/services/getPatients";
 import GroupIcon from "@mui/icons-material/Group";
 import PersonIcon from "@mui/icons-material/Person";
 import { Chip } from "@mui/material";
+import { PatientsSelector } from "@/components/patients/PatientsSelector";
+import { getPatients } from "@/services/getPatients";
 
 export default async function AppointmentsPage() {
   const patients = await getPatients();

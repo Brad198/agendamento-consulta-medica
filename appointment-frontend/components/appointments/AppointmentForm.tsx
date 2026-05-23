@@ -1,13 +1,5 @@
 "use client";
 
-import {
-  createAppointment,
-  CreateAppointmentDto,
-} from "@/services/createAppointment";
-import type { Doctor } from "@/types/entities/Doctor";
-import { Patient } from "@/types/entities/Patient";
-import { HttpResponseError } from "@/utils/errors/ErrorHttpResponse";
-import { createAppointmentSchema } from "@/utils/schemas/appointment";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Avatar,
@@ -24,7 +16,15 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import dayjs from "dayjs";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { z } from "zod";
+import type { z } from "zod";
+import {
+  type CreateAppointmentDto,
+  createAppointment,
+} from "@/services/createAppointment";
+import type { Doctor } from "@/types/entities/Doctor";
+import type { Patient } from "@/types/entities/Patient";
+import { HttpResponseError } from "@/utils/errors/ErrorHttpResponse";
+import { createAppointmentSchema } from "@/utils/schemas/appointment";
 
 type AppointmentFormProps = {
   patient: Patient;

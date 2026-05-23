@@ -1,4 +1,3 @@
-import type { Appointment } from "@/types/entities/Appointment";
 import { Visibility } from "@mui/icons-material";
 import {
   Button,
@@ -10,6 +9,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { useState } from "react";
+import type { Appointment } from "@/types/entities/Appointment";
 
 type NotesModalModalProps = {
   appointment: Appointment;

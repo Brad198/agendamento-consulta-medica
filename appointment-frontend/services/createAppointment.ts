@@ -3,7 +3,7 @@ import type { Doctor } from "@/types/entities/Doctor";
 import type { Patient } from "@/types/entities/Patient";
 import {
   HttpResponseError,
-  ResponseError,
+  type ResponseError,
 } from "@/utils/errors/ErrorHttpResponse";
 
 export type CreateAppointmentDto = Omit<
