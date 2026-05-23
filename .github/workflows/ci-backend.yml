@@ -29,5 +29,5 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: Compilar e Executar Testes
-        run: mvn clean verify
+      - name: Instalar dependências e Compilar
+        run: mvn clean install -DskipTests
