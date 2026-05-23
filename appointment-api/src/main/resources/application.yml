@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: "appointment-api"
+    version: "1.0.0"
+  datasource:
+    url: "jdbc:${DATABASE_DIALECT}://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}"
+    username: "${DATABASE_USER}"
+    password: "${DATABASE_PASSWORD}"
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: "create-drop"
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+  web:
+    error:
+      include-stacktrace: never
+
+springdoc:
+  api-docs:
+    path: "/api-docs"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health"
